@@ -28,7 +28,7 @@ def predict():
     if output == 1:
         return render_template('index.html', prediction_text = "Dropout")
     elif output == 3:
-        return render_template('index.html', prediction_text = "Graduate")   
+        return render_template('index.html', prediction_text = "Graduate")  
 
 
 if __name__ == '__main__':

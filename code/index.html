@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>ECS 163 Team 10 Final Project</title>
-    <link rel="stylesheet" href="./style.css">
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong&family=Montserrat">
 </head>
-<body style="width:100%;height:100%;margin: 0;">
+<body>
     <h1> ECS 163 Team 10 Final Project: Student Dropout Rates and ML Predictor </h1>
 	
     <section>
@@ -28,12 +29,42 @@
 
     
     <section> Section for the SciKit Learn Interaction </section>
-
-	<script src="https://d3js.org/d3.v6.js"></script>
+    <!---Containerize main page for styling--->
+    <!-- https://towardsdatascience.com/deploying-machine-learning-models-into-a-website-using-flask-8582b7ce8802 -->
+    <!-- <div class = "page"> -->
+        <!---Containerize paragraph and form for styling--->
+        <div class = "container">
+            <!-- <div class = "intro">
+                <b>
+                    <p class = "Note"><b>Note: Enter values which are reasonable to the context</b></p>
+                </b>
+            </div> -->
+            <!-- <br> -->
+            <!---Initialize form structure and inputs, set method to "POST"--->
+            <form action = "{{url_for('predict')}}" method = "post" class = "info">
+                <div class="inputField">
+                    <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div>
+                
+                <div class="inputField">
+                    <input type="text" id="age" name="Average House Age" placeholder="Area House Age" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+            </form>
+            <button type="submit" class="btn">Predict</button>
+            <!-- <br>  -->
+            <!---Set placeholder for prediction output--->
+            <div class ="pred">
+                <p class = "result"><b>{{ prediction_text }}</b></p>
+            </div>
+        </div>
+    <!-- </div> -->
+	<!-- <script src="https://d3js.org/d3.v6.js"></script>
 	<script src="script.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 	<script>
 
-	</script>
+	</script> -->
 </body>
 </html>

@@ -1,0 +1,32 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 2em;
+}
+
+form {
+    margin: 0.5em;
+    text-align: left;
+}
+
+.inputField {
+    display:flex;
+    flex-direction: row;
+    margin: 0.5em;
+}
+
+input {
+    width: 50%;
+}
+
+span {
+    margin: 0.25em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}

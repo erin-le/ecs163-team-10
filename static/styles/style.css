@@ -28,5 +28,5 @@ span {
 .info {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 100%;
 }

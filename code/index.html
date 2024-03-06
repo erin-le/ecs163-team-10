@@ -45,18 +45,45 @@
                 <div class="inputField">
                     <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
                     <span style="color:red"> * </span>
-                </div>
-                
+                </div>                
                 <div class="inputField">
-                    <input type="text" id="age" name="Average House Age" placeholder="Area House Age" required="required"/>
+                    <input type="text" id="age" name="Debtor" placeholder="Debtor" required="required"/>
                     <span style="color:red"> * </span>
                 </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Application mode" placeholder="Application mode" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Tuition fees up to date" placeholder="Tuition fees up to date" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 1st sem (approved)" placeholder="Curricular units 1st sem (approved)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 1st sem (grade)" placeholder="Curricular units 1st sem (grade)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 2nd sem (approved)" placeholder="Curricular units 2nd sem (approved)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 2nd sem (grade)" placeholder="Curricular units 2nd sem (grade)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Age at enrollment" placeholder="Age at enrollment" required="required"/>
+                    <span style="color:red"> * </span>
+                </div>
+                <button type="submit" class="btn">Predict</button> 
             </form>
-            <button type="submit" class="btn">Predict</button>
             <!-- <br>  -->
             <!---Set placeholder for prediction output--->
             <div class ="pred">
-                <p class = "result"><b>{{ prediction_text }}</b></p>
+                <p class = "result"><b>prediction: {{ prediction_text }}</b></p>
             </div>
         </div>
     <!-- </div> -->

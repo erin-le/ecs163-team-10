@@ -6,7 +6,7 @@ from flask import Flask, request, render_template
 app = Flask(__name__, template_folder='code')
 
 @app.route('/')
-def hello():
+def home():
   return render_template('index.html')
 
 model = joblib.load('ml-models/bi-logistic-reg.pkl')
@@ -25,6 +25,7 @@ def predict():
     output = prediction[0]
     
     #Remember target output mapping: dropout=1, graduate=3
+    # return render_template('index.html', prediction_text = output + "")
     if output == 1:
         return render_template('index.html', prediction_text = "Dropout")
     elif output == 3:

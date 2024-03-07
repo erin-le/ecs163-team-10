@@ -2,9 +2,10 @@
 <head>
   <meta charset="utf-8">
 	<title>ml model predictor</title>
-    <h1>predict dropout or graduate</h1>
+    <h3>predict dropout or graduate</h3>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong&family=Montserrat">
+    <!-- <script src="/ml-interaction/sliderlisteners.js"></script> -->
 </head>
 <body>
   <div class = "container">
@@ -17,39 +18,52 @@
     <!---Initialize form structure and inputs, set method to "POST"--->
     <form action = "{{url_for('predict')}}" method = "post" class = "info" id = "attribute-input" name = "info">
         <div class="inputField">
-            <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
+            <label for="Gender">Gender:</label>
+            <select name="gender-status" id="gender-id">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
             <span style="color:red"> * </span>
         </div>                
         <div class="inputField">
-            <input type="text" id="age" name="Debtor" placeholder="Debtor" required="required"/>
+            <label for="Debtor">Is in debt?</label>
+            <select name="debtor-status" id="debtor-id">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Application mode" placeholder="Application mode" required="required"/>
+            <label for="Tuition fees up to date">Tuition fees up to date?</label>
+            <select name="tuition-status" id="tuition-id">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Tuition fees up to date" placeholder="Tuition fees up to date" required="required"/>
+            <label>Curricular units 1st semester (approved):</label>
+            <input type="number" min="0" max="26" step="any" id="1st-sen-approve-id" name="Curricular units 1st sem (approved)" placeholder="Curricular units 1st sem (approved)" required="required"/>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Curricular units 1st sem (approved)" placeholder="Curricular units 1st sem (approved)" required="required"/>
+            <label>Curricular units 1st semester (grade):</label>
+            <input type="number" min="0" max="19" step="any" id="1st-sem-grade-id" name="Curricular units 1st sem (grade)" placeholder="Curricular units 1st sem (grade)" required="required"/>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Curricular units 1st sem (grade)" placeholder="Curricular units 1st sem (grade)" required="required"/>
+            <label>Curricular units 2nd semester (approved):</label>
+            <input type="number" min="0" max="20" step="any" id="2nd-sem-approve-id" name="Curricular units 2nd sem (approved)" placeholder="Curricular units 2nd sem (approved)" required="required"/>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Curricular units 2nd sem (approved)" placeholder="Curricular units 2nd sem (approved)" required="required"/>
+            <label>Curricular units 2nd semester (grade):</label>
+            <input type="number" min="0" max="19" step="any" id="2nd-sem-grade-id" name="Curricular units 2nd sem (grade)" placeholder="Curricular units 2nd sem (grade)" required="required"/>
             <span style="color:red"> * </span>
         </div> 
         <div class="inputField">
-            <input type="text" id="age" name="Curricular units 2nd sem (grade)" placeholder="Curricular units 2nd sem (grade)" required="required"/>
-            <span style="color:red"> * </span>
-        </div> 
-        <div class="inputField">
-            <input type="text" id="age" name="Age at enrollment" placeholder="Age at enrollment" required="required"/>
+            <label>Age at enrollment:</label>
+            <input type="number" min="17" max="70" step="1" id="age-id" name="Age at enrollment" placeholder="Age at enrollment" required="required"/>
             <span style="color:red"> * </span>
         </div>
         <button type="submit" class="btn">Predict</button> 

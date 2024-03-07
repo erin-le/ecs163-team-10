@@ -19,7 +19,7 @@ def home():
 def ml():
   return render_template('ml-interaction/index.html')
 
-model = joblib.load('ml-models/logistic-reg')
+model = joblib.load('ml-models/nn-reg')
 
 @app.route('/ml-interact', methods = ['POST'])
 # @socketio.on('submit') 

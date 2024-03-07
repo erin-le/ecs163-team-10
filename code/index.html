@@ -28,12 +28,12 @@
     </section>
 
     
-    <section> Section for the SciKit Learn Interaction </section>
+    <a href="{{ url_for('ml') }}"> Section for the SciKit Learn Interaction </a>
     <!---Containerize main page for styling--->
     <!-- https://towardsdatascience.com/deploying-machine-learning-models-into-a-website-using-flask-8582b7ce8802 -->
     <!-- <div class = "page"> -->
         <!---Containerize paragraph and form for styling--->
-        <div class = "container">
+        <!-- <div class = "container"> -->
             <!-- <div class = "intro">
                 <b>
                     <p class = "Note"><b>Note: Enter values which are reasonable to the context</b></p>
@@ -41,7 +41,7 @@
             </div> -->
             <!-- <br> -->
             <!---Initialize form structure and inputs, set method to "POST"--->
-            <form action = "{{url_for('predict')}}" method = "post" class = "info">
+            <!-- <form action = "{{url_for('predict')}}" method = "post" class = "info" id = "attribute-input" name = "info">
                 <div class="inputField">
                     <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
                     <span style="color:red"> * </span>
@@ -79,19 +79,33 @@
                     <span style="color:red"> * </span>
                 </div>
                 <button type="submit" class="btn">Predict</button> 
-            </form>
+            </form> -->
             <!-- <br>  -->
             <!---Set placeholder for prediction output--->
-            <div class ="pred">
+            <!-- <div class ="pred">
                 <p class = "result"><b>prediction: {{ prediction_text }}</b></p>
             </div>
-        </div>
+        </div> -->
     <!-- </div> -->
 	<!-- <script src="https://d3js.org/d3.v6.js"></script>
 	<script src="script.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-	<script>
-
-	</script> -->
-</body>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>-->
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous">
+    </script>
+ 
+    <script type="text/javascript">
+        $(document).on('submit','#attribute-input',function(e) {
+            console.log('submitting input');
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:"{{url_for('predict')}}",
+                data: { info:$("#attribute-input").val() },
+                success:function() { alert(data); }
+            })
+        });
+    </script> -->
+  </body>
 </html>

@@ -18,14 +18,14 @@ form {
 }
 
 input {
-    width: 50%;
+    width: 350px;
 }
 
 span {
     margin: 0.25em;
 }
 
-.info {
+.info:not-button {
     display: flex;
     flex-direction: column;
     width: 100%;

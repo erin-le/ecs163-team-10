@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+	<title>ml model predictor</title>
+    <h1>predict dropout or graduate</h1>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong&family=Montserrat">
+</head>
+<body>
+  <div class = "container">
+    <!-- <div class = "intro">
+        <b>
+            <p class = "Note"><b>Note: Enter values which are reasonable to the context</b></p>
+        </b>
+    </div> -->
+    <!-- <br> -->
+    <!---Initialize form structure and inputs, set method to "POST"--->
+    <form action = "{{url_for('predict')}}" method = "post" class = "info" id = "attribute-input" name = "info">
+        <div class="inputField">
+            <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
+            <span style="color:red"> * </span>
+        </div>                
+        <div class="inputField">
+            <input type="text" id="age" name="Debtor" placeholder="Debtor" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Application mode" placeholder="Application mode" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Tuition fees up to date" placeholder="Tuition fees up to date" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Curricular units 1st sem (approved)" placeholder="Curricular units 1st sem (approved)" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Curricular units 1st sem (grade)" placeholder="Curricular units 1st sem (grade)" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Curricular units 2nd sem (approved)" placeholder="Curricular units 2nd sem (approved)" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Curricular units 2nd sem (grade)" placeholder="Curricular units 2nd sem (grade)" required="required"/>
+            <span style="color:red"> * </span>
+        </div> 
+        <div class="inputField">
+            <input type="text" id="age" name="Age at enrollment" placeholder="Age at enrollment" required="required"/>
+            <span style="color:red"> * </span>
+        </div>
+        <button type="submit" class="btn">Predict</button> 
+    </form>
+    <!-- <br>  -->
+    <!---Set placeholder for prediction output--->
+    <div class ="pred">
+        <p class = "result"><b>prediction: {{ prediction_text }}</b></p>
+    </div>
+</div>
+<a href="{{url_for('home')}}">go back home</a>
+</body>

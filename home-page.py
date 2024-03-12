@@ -1,15 +1,16 @@
 import numpy as np
 import joblib
 import sys
+import pandas as pd
+import csv
 
-from flask import Flask, request, render_template
-# use socketIO to async update the form div
-# from flask_socketio import SocketIO, emit
+from flask import Flask, request, render_template, send_file
 
-app = Flask(__name__, template_folder='code')
+app = Flask(__name__, template_folder='testing')
 
-# app.config['SECRET_KEY'] = 'secret!'
-# socketio = SocketIO(app)
+@app.route('/get_data')
+def give_d3_data():
+  return send_file('data.csv')
 
 @app.route('/')
 def home():
@@ -22,20 +23,19 @@ def ml():
 model = joblib.load('ml-models/nn-reg')
 
 @app.route('/ml-interact', methods = ['POST'])
-# @socketio.on('submit') 
 def predict():
     
-    #obtain all form values and place them in an array, convert into integers
+    # obtain all form values and place them in an array, convert into integers
     int_features = [int(x) for x in request.form.values()]
-    # #Combine them all into a final numpy array
+    # combine them all into a final numpy array
     final_features = [np.array(int_features)]
-    #predict the price given the values inputted by user
+    # predict the price given the values inputted by user
     prediction = model.predict(final_features)
     
-    #Get the predicted target result
+    # get the predicted target result
     output = prediction[0]
     
-    #Remember target output mapping: dropout=1, graduate=3
+    # remember target output mapping: dropout=1, graduate=3
     if output == 1:
         return render_template('ml-interaction/index.html', prediction_text = "Dropout")
     elif output == 2:

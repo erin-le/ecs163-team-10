@@ -2,6 +2,10 @@
 <html style="width:100%;height:100%;">
 <head>
     <meta charset="utf-8">
+    <!-- <script src="{{url_for('static', filename='d3v6.js')}}"></script> -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <title>ECS 163 Team 10 Final Project</title>
 </head>
 <body style="width:100%;height:100%;margin: 0;">
@@ -10,10 +14,7 @@
     <!-- Container for the SVG -->
     <div id="graph-container" style="width: 800px; height: 600px; margin: auto;">
         <svg width="100%" height="100%" id="bubble"></svg>
-    </div>
-
-    <script src="https://d3js.org/d3.v6.js"></script>
-    <script src="script.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    </div>   
+    
 </body>
 </html>

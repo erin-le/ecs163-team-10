@@ -9,7 +9,8 @@ y_axis_scalers = []
 
 // code for bubble
 
-d3.dsv(';', '../data.csv').then(data => {
+d3.dsv(';', '/get_data').then(data => {
+    console.log("data:" + data)
     // Data processing here
     const courseStats = data.reduce((acc, val) => {
         if (!acc[val.Course]) {
@@ -56,9 +57,9 @@ d3.dsv(';', '../data.csv').then(data => {
         d3.schemeTableau10); // This uses one of D3's built-in color schemes
 
     // set the dimensions and margins of the graph
-    var margin = {top : 10, right : 20, bottom : 30, left : 50},
-        width = 800 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    var margin = {top : 10, right : 20, bottom : 100, left : 70},
+        width = parseInt(d3.select('#graph-container').style("width")) - margin.left - margin.right,
+        height = parseInt(d3.select('#graph-container').style("height")) - margin.top - margin.bottom;
 
     // append the svg object to the div with id "my_dataviz"
     var svg = d3.select("#bubble")

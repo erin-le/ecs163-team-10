@@ -2,14 +2,15 @@
 <html style="width:100%;height:100%;">
 <head>
     <meta charset="utf-8">
-    <!-- <script src="{{url_for('static', filename='d3v6.js')}}"></script> -->
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="{{url_for('static', filename='script.js')}}"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" >
     <title>ECS 163 Team 10 Final Project</title>
 </head>
-<body style="width:100%;height:100%;margin: 0;">
+<body>
     <h1> ECS 163 Team 10 Final Project: Student Dropout Rates and ML Predictor </h1>
+    <a href="{{url_for('ml')}}"> goto ml site test</a>
     
     <!-- Container for the SVG -->
     <div id="graph-container" style="width: 800px; height: 600px; margin: auto;">

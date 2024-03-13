@@ -2,99 +2,163 @@
 
 body {
     margin: 2em;
-    font-family: 'Montserrat', sans-serif;
-    display:flex;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
 .container {
-    width:50%;
+    width: 60%;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
-}
+    background: #ffffff;
+    padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
 
-::placeholder, option.value {
-    font-family: 'Quicksand', sans-serif;
-}
+    ::placeholder, option.value {
+        font-family: 'Quicksand', sans-serif;
+        color: #888;
+    }
 
-form {
-    margin-bottom: 0.5em;
-    margin-top:0.5em;
-    text-align: left;
-}
+    form {
+        margin: 0.5em 0;
+    }
 
-.inputField:not-span {
-    display:flex;
-    flex-direction: column;
-}
+    .inputField:not(span) {
+        display: flex;
+        flex-direction: column;
+    }
 
-input {
-    width: 350px;
-}
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+    }
 
-.info:not-button {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+    .info:not(button) {
+        display: flex;
+        flex-direction: column;
+    }
 
-label {
-    margin-bottom:0.5em;
-    margin-top: 1.5em;
-    display:flex;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-}
+    label {
+        margin: 1.5em 0 0.5em;
+        font-size: 15px;
+        font-family: 'Quicksand', sans-serif;
+    }
 
-h2, h3 {
-    font-family: 'Quicksand', sans-serif;
-    weight:700;
-}
+    h2, h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        margin-top: 0;
+    }
 
-/* CSS */
-/* from https://getcssscan.com/css-buttons-examples under "Algolia" (button 30) */
-button {
-  align-items: center;
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
-  margin-top:1em;
-}
+    button {
+      align-items: center;
+      appearance: none;
+      background-color: #FCFCFD;
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      color: #36395A;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      height: 48px;
+      justify-content: center;
+      padding-left: 16px;
+      padding-right: 16px;
+      transition: box-shadow .15s, transform .15s;
+      font-size: 18px;
+      margin-top: 1em;
+      width: 100px; 
+    }
 
-button:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
+    button:focus {
+        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      }
+      
+      button:hover {
 
-button:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        transform: translateY(-2px);
+      }
+      
+      button:active {
 
-button:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+        
+        body {
+            margin: 1em;
+        }
+    }
+
+    .pred .result {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .go-back-home {
+        display: inline-block; 
+        padding: 10px 15px; 
+        background-color: #007bff; 
+        color: white; 
+        text-align: center;
+        text-decoration: none; 
+        border-radius: 5px; 
+        transition: background-color 0.3s, box-shadow 0.3s;
+        position: fixed; 
+        bottom: 20px; 
+        left: 20px; 
+        z-index: 1000; 
+    }
+    
+    .go-back-home:hover {
+        background-color: #0056b3; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    }
+
+
+    .button-style {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        position: relative;
+        margin-top: 10px;
+        z-index: 1000;
+    }
+    
+    .button-style:hover {
+        background-color: #0056b3;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }

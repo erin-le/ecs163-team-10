@@ -23,7 +23,7 @@ const parallelPlot = d3.select("#parallel-plot")
     .attr("width", fullWidth)
     .attr("height", fullHeight)
     .append("g")
-    .attr("transform", `translate(${margin}, 0)`)
+    .attr("transform", `translate(${margin}, ${margin})`)
 
 d3.csv("../data-comma.csv").then(function (data){
     //console.log (data[0].keys)
@@ -50,7 +50,7 @@ d3.csv("../data-comma.csv").then(function (data){
         if (axisName != "Target"){
             parallelYAxes[axisName] = d3.scaleLinear()
             .domain(d3.extent(data, function(d) { return +d[axisName]; }))
-            .range([height-margin,margin])
+            .range([height - 2*margin,margin])
         }
         else{
             parallelYAxes["Target"] = d3.scalePoint()
@@ -86,8 +86,8 @@ d3.csv("../data-comma.csv").then(function (data){
         .data(data)
         .join("path")
             .attr("d", path)
-            .style("stroke", "orange")
-            .style("opacity", 0.3)
+            .style("stroke", "purple")
+            .style("opacity", 0.03)
             .style("fill", "none")
 
 
@@ -117,18 +117,28 @@ d3.csv("../data-comma.csv").then(function (data){
                 //console.log(parallelYAxes["Target"](d["Target"]))
                 //parallelPlot.selectAll("path")
                 lines
-                .style("stroke", "gray")
+                .style("stroke", "purple")
                 .filter(d => {
+                    //false if within none of the selections
+                    
                     let ans = false
+                    // if within one selection, set ans to true
                     for (const [key, value] of selections){
                         if (parallelYAxes[key](d[key]) <= value[1] && parallelYAxes[key](d[key]) >= value[0]){
                             ans = true;
-                            }
+                            break;
                         }
-                        return ans
                     }
+                    for (const [key, value] of selections){
+                        if (!(parallelYAxes[key](d[key]) <= value[1] && parallelYAxes[key](d[key]) >= value[0])){
+                            ans = false;
+                            break;
+                        }
+                    }
+                    return ans
+                }
                 )
-                .call(d => console.log(d))
+                // .call(d => console.log(d))
                 .style("stroke", "blue")
                 .data()
             }
@@ -150,6 +160,7 @@ d3.csv("../data-comma.csv").then(function (data){
             .attr("y", -9)
             .text(function(d) { return d; })
             .style("fill", "black")
+            .attr("transform", "rotate(-25)")
 
 
 

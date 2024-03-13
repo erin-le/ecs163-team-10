@@ -10,6 +10,28 @@ body {
     color: #333;
 }
 
+#firstHeatmap {
+    width: 100%;
+}
+img {
+    width:50%;
+    margin:2em;
+}
+.walkthrough {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+}
+.subsection1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 15em;
+    margin-bottom: 10em;
+    margin-left: 5em;
+    margin-right:5em;
+}
 .container {
     width: 60%;
     max-width: 550px;

@@ -10,7 +10,7 @@
     <title>walkthrough portion</title>
 </head>
 <body>
-  <h1>Part I: Exploratory Data Analysis</h1>
+  <h1>Part II: The walkthrough</h1>
   <section class="walkthrough">
     <div class="subsection1">
       <p>
@@ -39,10 +39,31 @@
     <img src="../static/img/all correlation scatterplots.png"/>
   </section>
   <section class="walkthrough">
-    <div class="subsection1">
+    <div class="subsection2">
       <p>
-        Let's narrow this down to just two features so we can actually plot these features against each other. We'll use a technique called Principle Component Analysis to do this.
+        Let's narrow this down to just two features so we can actually plot these features against each other. We'll use a technique called Principle Component Analysis, done through Python's Scikit-Learn library.
       </p>
+      <div class="pcaImages">
+        <img src="../static/img/pca graph.png"/>
+        <img src="../static/img/variable influence.png"/>
+      </div>
+      <p>
+        This essentially tells us that the two most influential features of all are the student's age at enrollment and what grade students receive for their second semester. You may have also noticed that the scatter plot resembles the "Age at enrollment" vs "Curricular units 2nd sem (grade)" subplot in the pairplot above.
+      </p>
+    </div>
+  </section>
+  <section class="walkthrough">
+    <div class="subsection2">
+      <p>
+        But how similar are these students to each other? To get better insight, we used KMeans with 4 clusters. We decided on 4 based on the elbow plot method, which tells us the optimal number of clusters. For clarity, let's plot this with "Age at enrollment" vs "Curricular units 2nd sem (grade)":
+      </p><br>
+      <p>
+        With this, we can assume that there are 4 distinct kinds of people within this university.
+      </p>
+      <div class="pcaImages">
+        <img src="../static/img/kmeans without pca.png"/>
+        <img src="../static/img/age vs 2nd sem grade.png"/>
+      </div>
     </div>
   </section>
     <!-- <h1> ECS 163 Team 10 Final Project: Student Dropout Rates and ML Predictor </h1> -->

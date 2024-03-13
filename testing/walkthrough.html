@@ -12,17 +12,30 @@
 <body>
   <section class="walkthrough">
     <div class="subsection1">
+      <p>
       What makes someone drop out of college?
       To find out, we used <a href="https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success">this dataset</a> from the Polytechnic Institute of Portalegre, Portugal.
-      Using Python's Seaborn library, we created a heatmap to observe all correlations between our given features:
+      Using Python's Seaborn library, we created the heatmap on the right to observe all correlations between our given features. The bluer the color, the more positive the correlation.
+      <br><br>
+      This is a lot of features! We should drop the ones with barely any correlation with our target feature. </p>
     </div>
     <img src="../static/img/first heatmap.png" alt="a heatmap with all features given by the dataset" id="firstHeatmap"/>
   </section>
   <section class="walkthrough">
     <div class="subsection1">
-    Getting rid of features with little to no correlation with the "Target" variable, like "Inflation rate" and "GDP", we get this:
-  </div>
+      <p>
+        Getting rid of features with little to no correlation with the "Target" variable (the variable that tells us if a student dropped out, is enrolled, or will graduate), like "Inflation rate" and "GDP", we get this:
+      </p>
+    </div>
     <img src="../static/img/narrow heatmap.png"/>
+  </section>
+  <section class="walkthrough">
+    <div class="subsection1">
+      <p>
+        Those 8 remaining features (excluding "Target") have the most correlations a student's performance! The following is a pairplot showing how each of these features relate to each other (1 = dropout, 2 = enrolled, 3 = graduate):
+      </p>
+    </div>
+    <img src="../static/img/all correlation scatterplots.png"/>
   </section>
     <!-- <h1> ECS 163 Team 10 Final Project: Student Dropout Rates and ML Predictor </h1> -->
     <!-- <a href="{{url_for('ml')}}" class="button-style">goto ml site test</a> -->

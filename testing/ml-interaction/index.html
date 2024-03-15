@@ -74,5 +74,9 @@
         <p class = "result"><b>Prediction: {{ prediction_text }}</b></p>
     </div>
 </div>
-<a href="{{url_for('home')}}" class="go-back-home">go back home</a>
+<div class="all-buttons">
+    <a href="{{url_for('home')}}" class="go-back-home">Go back to beginning</a>
+    <a href="{{ url_for('pp_plot') }}" class="button-style"> Go to parallel plot </a>
+    <a href="{{ url_for('bubble') }}" class="button-style"> Go to bubble chart </a>
+</div>
 </body>

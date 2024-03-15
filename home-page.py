@@ -12,13 +12,25 @@ app = Flask(__name__, template_folder='testing')
 def give_d3_data():
   return send_file('data.csv')
 
+@app.route('/get_data_comma')
+def give_d3_data_comma():
+  return send_file('data-comma.csv')
+
 @app.route('/')
 def home():
-  return render_template('index.html')
+  return render_template('walkthrough.html')
 
 @app.route('/ml-interact')
 def ml():
   return render_template('ml-interaction/index.html')
+
+@app.route('/pp-plot')
+def pp_plot():
+  return render_template('parallel.html')
+
+@app.route('/bubble-plot')
+def bubble():
+  return render_template('bubble.html')
 
 model = joblib.load('ml-models/nn-reg')
 

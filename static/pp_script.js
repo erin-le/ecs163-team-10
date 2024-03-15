@@ -10,11 +10,11 @@
 let axisNames = []
 
 
-const margin = 75
+const margin = 80;
 //https://www.w3schools.com/jsref/prop_screen_width.asp
-const fullWidth = screen.width
-const fullHeight = screen.height
-
+const fullWidth = screen.width // this turns into 1536??
+const fullHeight = screen.height // 864??
+// console.log(screen.height)
 const width = screen.width - (2*margin)
 const height = screen.height - (2*margin)
 
@@ -447,17 +447,19 @@ let selections = new Map()
         .attr("y", -9)
         .text(function(d) { return d; })
         .style("fill", "black")
-        .attr("transform", `translate(0, ${height - margin * 1.75}) rotate(35)`)
+        .attr("transform", `translate(0, ${height - margin * 1.75}) rotate(60)`)
         // .attr("transform", "rotate(-25)")
         .on("mouseover", (event, d) => {
             console.log("aaaaa")
             d3.select(event.currentTarget).style("fill", "orange")
+            d3.select(event.currentTarget).style("cursor", "pointer");
             // console.log(event.currentTarget)
             // console.log(event.currentTarget.textContent)
         })
             
         .on("mouseleave",(event, d) =>{
             d3.select(event.currentTarget).style("fill", "black")
+            d3.select(event.currentTarget).style("cursor", "default");
         })
         .on("click", (event, d) =>{
             let axisName = event.currentTarget.textContent

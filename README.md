@@ -7,4 +7,4 @@ ECS 163 final project for team 10. Winter Quarter 2024
 - ```home-page.py``` is the server file.
 
 # Running the website
-In order to run it, make sure to download `flask` via `pip install flask`. After downloading this repository, open the terminal and input the command `python -m flask app home-page run` or `flask --app home-page run`.
+In order to run it, make sure to download `flask` via `pip install flask`. After downloading this repository, open the terminal and input the command `python -m flask --app home-page run` or `flask --app home-page run`.

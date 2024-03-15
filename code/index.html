@@ -14,8 +14,13 @@
         <button>Next</button>
     </section>
     <svg width="100%" height="100%" id="parallel-plot"></svg>
-    <svg width="100%" height="100%" id="helper-plot"></svg>
-    
+    <svg width="150px" height="100px" id="legend"></svg>
+    <p>Click the axis titles to see a histogram for each axis!</p>
+    <div style="display:inline-flex">
+        <div><svg width=520 height=520 id="helper-plot"></svg></div>
+        
+        <div><p id="axis-info"></p></div>
+    </div>
     <section style="flex-direction: row;">
         <section>
             <svg width="100%" height="100%" id="cluster"></svg>
@@ -33,8 +38,5 @@
 	<script src="https://d3js.org/d3.v6.js"></script>
 	<script src="script.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-	<script>
-
-	</script>
 </body>
 </html>

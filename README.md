@@ -9,3 +9,6 @@ ECS 163 final project for team 10. Winter Quarter 2024
 
 # Running the website
 In order to run it, make sure to download `flask` via `pip install flask`. After downloading this repository, open the terminal and input the command `python -m flask --app home-page run` or `flask --app home-page run`.
+
+# Plots and Interaction
+Our two interactive plots are a bubble plot and a parallel coordinates plot. The bubble plot implements zooming. The parallel coordinates plot implements brushing on each individual axis. Furthermore, clicking on the axis label reveals a histogram subplot for that axis, alongside some additional information.

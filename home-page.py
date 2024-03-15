@@ -6,7 +6,7 @@ import csv
 
 from flask import Flask, request, render_template, send_file
 
-app = Flask(__name__, template_folder='testing')
+app = Flask(__name__, template_folder='src')
 
 @app.route('/get_data')
 def give_d3_data():

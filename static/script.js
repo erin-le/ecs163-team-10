@@ -9,7 +9,43 @@ y_axis_scalers = []
 
 // code for bubble
 
-d3.dsv(';', '../data.csv').then(data => {
+d3.dsv(';', '/get_data').then(data => {
+    // console.log("data:" + data)
+    /*33 - Biofuel Production Technologies 
+    171 - Animation and Multimedia Design 
+    8014 - Social Service (evening attendance) 
+    9003 - Agronomy 
+    9070 - Communication Design 
+    9085 - Veterinary Nursing 
+    9119 - Informatics Engineering 
+    9130 - Equinculture 
+    9147 - Management 
+    9238 - Social Service 
+    9254 - Tourism 
+    9500 - Nursing 
+    9556 - Oral Hygiene 
+    9670 - Advertising and Marketing Management 
+    9773 - Journalism and Communication 
+    9853 - Basic Education 
+    9991 - Management (evening attendance) */
+    courseMap = new Map();
+    courseMap.set('33', 'Biofuel Production Technologies');
+    courseMap.set('171', 'Animation and Multimedia Design');
+    courseMap.set('8014', 'Social Service (evening attendance)');
+    courseMap.set('9003', 'Agronomy');
+    courseMap.set('9070', 'Communication Design');
+    courseMap.set('9085', 'Veterinary Nursing');
+    courseMap.set('9119', 'Informatics Engineering');
+    courseMap.set('9130', 'Equinculture');
+    courseMap.set('9147', 'Management');
+    courseMap.set('9238', 'Social Service');
+    courseMap.set('9254', 'Tourism');
+    courseMap.set('9500', 'Nursing');
+    courseMap.set('9556', 'Oral Hygiene');
+    courseMap.set('9670', 'Advertising and Marketing Management');
+    courseMap.set('9773', 'Journalism and Communication');
+    courseMap.set('9853', 'Basic Education');
+    courseMap.set('9991', 'Management (evening attendance)');
     // Data processing here
     const courseStats = data.reduce((acc, val) => {
         if (!acc[val.Course]) {
@@ -30,14 +66,14 @@ d3.dsv(';', '../data.csv').then(data => {
         const dropoutRate = (courseStats[key].Dropout / total) * 100;
 
         acc.push({
-            Course : key,
+            Course : courseMap.get(key),
             Total : total,
             Status : 'Graduate',
             Rate : graduateRate,
             Size : total * graduateRate
         });
         acc.push({
-            Course : key,
+            Course : courseMap.get(key),
             Total : total,
             Status : 'Dropout',
             Rate : dropoutRate,
@@ -49,16 +85,16 @@ d3.dsv(';', '../data.csv').then(data => {
 
     console.log(bubbleData);
     // Extract unique course numbers
-    const courses = [...new Set(bubbleData.map(d => d.Course)) ];
+    const courses = [...new Set(bubbleData.map(d => d.Course))];
 
     // Define an ordinal scale for course colors
     const color = d3.scaleOrdinal().domain(courses).range(
         d3.schemeTableau10); // This uses one of D3's built-in color schemes
 
     // set the dimensions and margins of the graph
-    var margin = {top : 10, right : 20, bottom : 30, left : 50},
-        width = 800 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    var margin = {top : 10, right : 20, bottom : 100, left : 70},
+        width = parseInt(d3.select('#graph-container').style("width")) - margin.left - margin.right,
+        height = parseInt(d3.select('#graph-container').style("height")) - margin.top - margin.bottom;
 
     // append the svg object to the div with id "my_dataviz"
     var svg = d3.select("#bubble")

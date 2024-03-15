@@ -1,0 +1,102 @@
+<!doctype html>
+<html style="width:100%;height:100%;">
+<head>
+	<meta charset="utf-8">
+	<title>ECS 163 Team 10 Final Project</title>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" >
+</head>
+<body>
+    <h1> Part II: Plot trends </h1>
+	
+    <!-- <section>
+        <svg width="100%" height="100%" id="intro"></svg>
+        <p> walkthrough text</p>
+        <button>Next</button>
+    </section> -->
+
+    <!-- <svg width="100%" height="100%" id="parallel-plot"></svg> -->
+    <div id="parallel-plot"></div>
+    <svg width="150px" height="100px" id="legend"></svg>
+    <p>Click the axis titles to see a histogram for each axis!</p>
+    <div style="display:inline-flex">
+        <div><svg width=520 height=520 id="helper-plot"></svg></div>
+        
+        <div><p id="axis-info"></p></div>
+    </div>
+    <!-- <section style="flex-direction: row;">
+        <section>
+            <svg width="100%" height="100%" id="cluster"></svg>
+            <p>cluster</p>
+        </section>
+        <section>
+            <svg width="100%" height="100%" id="bubble"></svg>
+            <p>bubble</p>
+        </section>
+    </section>     -->
+    <br>
+    <!-- <a href="{{ url_for('ml') }}" class="button-style"> Click here for the SciKit Learn Interaction </a><br> -->
+    <a href="{{ url_for('bubble') }}" class="button-style"> Click here for the bubble plot </a>
+    <!---Containerize main page for styling--->
+    <!-- https://towardsdatascience.com/deploying-machine-learning-models-into-a-website-using-flask-8582b7ce8802 -->
+    <!-- <div class = "page"> -->
+        <!---Containerize paragraph and form for styling--->
+        <!-- <div class = "container"> -->
+            <!-- <div class = "intro">
+                <b>
+                    <p class = "Note"><b>Note: Enter values which are reasonable to the context</b></p>
+                </b>
+            </div> -->
+            <!-- <br> -->
+            <!---Initialize form structure and inputs, set method to "POST"--->
+            <!-- <form action = "{{url_for('predict')}}" method = "post" class = "info" id = "attribute-input" name = "info">
+                <div class="inputField">
+                    <input type="text" id="name" name="Gender" placeholder="Gender (0 for female, 1 for male)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div>                
+                <div class="inputField">
+                    <input type="text" id="age" name="Debtor" placeholder="Debtor" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Application mode" placeholder="Application mode" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Tuition fees up to date" placeholder="Tuition fees up to date" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 1st sem (approved)" placeholder="Curricular units 1st sem (approved)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 1st sem (grade)" placeholder="Curricular units 1st sem (grade)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 2nd sem (approved)" placeholder="Curricular units 2nd sem (approved)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Curricular units 2nd sem (grade)" placeholder="Curricular units 2nd sem (grade)" required="required"/>
+                    <span style="color:red"> * </span>
+                </div> 
+                <div class="inputField">
+                    <input type="text" id="age" name="Age at enrollment" placeholder="Age at enrollment" required="required"/>
+                    <span style="color:red"> * </span>
+                </div>
+                <button type="submit" class="btn">Predict</button> 
+            </form> -->
+            <!-- <br>  -->
+            <!---Set placeholder for prediction output--->
+            <!-- <div class ="pred">
+                <p class = "result"><b>prediction: {{ prediction_text }}</b></p>
+            </div>
+        </div> -->
+    <!-- </div> -->
+	<script src="{{url_for('static', filename='pp_script.js')}}"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v6.js"></script>  
+</body>
+</html>

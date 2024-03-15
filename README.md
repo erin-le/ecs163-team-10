@@ -13,4 +13,4 @@ In order to run it, make sure to download `flask` via `pip install flask`. After
 # Plots and Interaction
 Our two interactive visualizations are a bubble plot and a parallel coordinates plot. The bubble plot implements zooming and also shows a tooltip with more information when hovering over a bubble. The parallel coordinates plot implements brushing on each individual axis. Furthermore, clicking on an axis label reveals a histogram subplot for that axis alongside some additional information.
 
-Additionally, we have a machine learning powered interface that predicts whether a student will drop out based on the selected input values.
+Additionally, we have a user interface for interacting with a machine learning model that predicts whether a student will drop out based on the selected input values.

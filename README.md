@@ -8,7 +8,7 @@ ECS 163 final project for team 10. Winter Quarter 2024
 - The `src` directory contains all html files used to host interactive visualizations, namely `parallel.html` and `bubble.html`
 
 # Running the website
-In order to run it, make sure to download `flask` via `pip install flask`. After downloading this repository, open the terminal and input the command `python -m flask --app home-page run` or `flask --app home-page run`.
+In order to run it, make sure to download `flask` via `pip install flask` and Scikit-Learn version 1.2.2 via `pip install -U scikit-learn`, which requires Python 3.8 or newer (if you don't have that version, please go to https://www.python.org/ to download the latest version). After downloading this repository, open the terminal, go into the repository root folder and input the command `python -m flask --app home-page run` or `flask --app home-page run`.
 
 # Plots and Interaction
 Our two interactive visualizations are a bubble plot and a parallel coordinates plot. The bubble plot implements zooming and also shows a tooltip with more information when hovering over a bubble. The parallel coordinates plot implements brushing on each individual axis. Furthermore, clicking on an axis label reveals a histogram subplot for that axis alongside some additional information.
